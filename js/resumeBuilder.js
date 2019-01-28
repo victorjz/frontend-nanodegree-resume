@@ -28,7 +28,7 @@ var projects = {
           ]
        }
     ]
- }
+ };
 
 var bio = {
     "name": "Victor Z",
@@ -46,7 +46,7 @@ var bio = {
        "JavaScript",
        "JSON"
     ]
- }
+ };
 
 var education = {
     "schools": [
@@ -75,4 +75,12 @@ var education = {
           "url": "udacity.com"
        }
     ]
+ };
+
+$('#header').append(HTMLheaderName.replace('%data%', bio.name));
+ if(bio.skills.length > 0) {
+    $('#header').append(HTMLskillsStart);
+    bio.skills.forEach(function(skill) {
+        $('#skills').append(HTMLskills.replace('%data%', skill));
+    });
  }
